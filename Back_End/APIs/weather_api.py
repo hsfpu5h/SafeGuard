@@ -1,7 +1,8 @@
+from keys import API_KEY
 from get_data_func import get_data
 
 
-API_KEY = os.getenv("API_WEATHERAPI_KEY")
+
 BASE_URL = "http://api.weatherapi.com/v1/forecast.json"
 
 

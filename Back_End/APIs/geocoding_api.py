@@ -1,15 +1,12 @@
-import os
+from keys import API_GEOCODE_KEY
 from get_data_func import get_data
-
-
-API_KEY = os.getenv("API_GEOCODE_KEY")
 
 
 def get_coordinates(address_to_go):
     """
     gets latitude & longitude for location
     """
-    api_url = f"https://api.opencagedata.com/geocode/v1/json?q={address_to_go}&key={API_KEY}"
+    api_url = f"https://api.opencagedata.com/geocode/v1/json?q={address_to_go}&key={API_GEOCODE_KEY}"
     coordinates_to_go = get_data(api_url)
 
     if coordinates_to_go and coordinates_to_go['results']:
