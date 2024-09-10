@@ -3,8 +3,7 @@ from get_data_func import get_data
 
 def get_earthquakes(lat=None, lon=None, start_time=None, end_time=None, max_radius_km=None, min_magnitude=None):
     '''
-    gets earthquake data for specific parameter
-    returns dict
+    gets earthquake data for specific parameter & returns dict
     '''
     base_url = "https://earthquake.usgs.gov/fdsnws/event/1/query"
 

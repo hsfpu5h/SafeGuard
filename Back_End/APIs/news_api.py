@@ -21,6 +21,6 @@ def get_top_news(country=None, keywords=None):
     top_news = get_data(api_url, params=params)
     return top_news
 
-print(get_top_news(country="us"))
+print(get_top_news(keywords="Germany"))
 
 
