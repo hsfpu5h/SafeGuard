@@ -42,6 +42,7 @@ def get_air_quality_data(requested_city=None, requested_state=None, requested_co
         api_url = f"{BASE_URL}city?city={requested_city}&state={requested_state}&country={requested_country}&key={API_KEY}"
     elif latitude and longitude:
         api_url = f"{BASE_URL}nearest_city?lat=latitude&lon=longitude&key={API_KEY}"
+
     air_quality_data = get_data(api_url)
     return air_quality_data
 
@@ -49,7 +50,7 @@ def get_air_quality_data(requested_city=None, requested_state=None, requested_co
 def get_data(api_url):
     """
         requests data from specific url
-        returns
+        returns a dict
     """
     response = requests.get(api_url)
     if response.status_code == 200:
@@ -64,10 +65,10 @@ def get_data(api_url):
     return None
 
 
-city="Braunschweig"
-state="Lower Saxony"
-country="Germany"
+city="New York City"
+state="New York"
+country="USA"
 #get_stations_in_city(city, state, country)
-#get_cities_available(state, country)
+#get_cities_in_state(state, country)
 #get_air_quality_data(city, state, country)
 #get_states_in_country(country)
