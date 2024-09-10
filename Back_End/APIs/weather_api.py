@@ -1,5 +1,5 @@
 import os
-from iqair_api import get_data
+from get_data_func import get_data
 
 
 API_KEY = os.getenv("API_WEATHERAPI_KEY")
@@ -14,3 +14,4 @@ def get_berlin_forecast(city, days):
     berlin_forecast_data = get_data(api_url)
     return berlin_forecast_data
 
+get_berlin_forecast("Berlin", 3)
