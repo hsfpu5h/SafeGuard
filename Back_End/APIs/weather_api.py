@@ -1,4 +1,3 @@
-import os
 from get_data_func import get_data
 
 
