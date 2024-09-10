@@ -1,17 +1,15 @@
-from keys import API_KEY
+from keys import API_WEATHERAPI_KEY
 from get_data_func import get_data
 
-
-
-BASE_URL = "http://api.weatherapi.com/v1/forecast.json"
-
-
-def get_berlin_forecast(city, days):
+def get_forecast(city, days):
     '''
     constructs url to get forecast
+        °°°if 'alerts=yes' last nested dict is 'alerts': {'alert': []}°°°
     '''
-    api_url = f"{BASE_URL}?key={API_KEY}&q={city}&days={days}"
-    berlin_forecast_data = get_data(api_url)
-    return berlin_forecast_data
+    api_url = f"http://api.weatherapi.com/v1/forecast.json?key={API_WEATHERAPI_KEY}&q={city}&alerts=yes"
+    forecast_data = get_data(api_url)
 
-get_berlin_forecast("Berlin", 3)
+    if forecast_data:
+        return forecast_data
+    else:
+        print("No data available")

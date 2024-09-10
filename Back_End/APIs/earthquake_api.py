@@ -1,6 +1,5 @@
 from get_data_func import get_data
 
-
 def get_earthquakes(lat=None, lon=None, start_time=None, end_time=None, max_radius_km=None, min_magnitude=None):
     '''
     gets earthquake data for specific parameter & returns dict
@@ -25,4 +24,8 @@ def get_earthquakes(lat=None, lon=None, start_time=None, end_time=None, max_radi
         params["minmagnitude"] = min_magnitude
 
     earthquake_data = get_data(base_url, params=params)
-    return earthquake_data
+
+    if earthquake_data:
+        return earthquake_data
+    else:
+        print("No data available")

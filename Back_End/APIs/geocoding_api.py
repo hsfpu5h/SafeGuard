@@ -1,7 +1,6 @@
 from keys import API_GEOCODE_KEY
 from get_data_func import get_data
 
-
 def get_coordinates(address_to_go):
     """
     gets latitude & longitude for location
@@ -12,6 +11,11 @@ def get_coordinates(address_to_go):
     if coordinates_to_go and coordinates_to_go['results']:
         first_result = coordinates_to_go['results'][0]
         coordinates = first_result['geometry']
-        return coordinates
+
+        if coordinates:
+            return coordinates
+        else:
+            print("No coordinates available")
+
     return None
 
