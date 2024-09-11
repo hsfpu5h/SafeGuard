@@ -18,7 +18,8 @@ def get_neo_data(start_date=None, end_date=None):
         print(f"Error retrieving data: {e}")
         return None
 
-def get_miss_distance_kilometers(neo_data):
+def get_miss_distance_kilometers():
+    neo_data = get_neo_data()
     try:
         distances_kilometers = []
         for date, neos in neo_data["near_earth_objects"].items():
