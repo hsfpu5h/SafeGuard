@@ -23,6 +23,6 @@ def get_top_news(country=None, domains=None, keywords=None):
     top_news = get_data(api_url, params=params)
     return top_news
 
-print(get_top_news("ca"))
+#print(get_top_news("ca"))
 
 

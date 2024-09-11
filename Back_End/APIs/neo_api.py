@@ -21,12 +21,12 @@ def get_neo_data(start_date=None, end_date=None):
 def get_miss_distance_kilometers(neo_data):
     try:
         distances_kilometers = []
-        for date, neos in neo_data['near_earth_objects'].items():
+        for date, neos in neo_data["near_earth_objects"].items():
             for neo in neos:
-                close_approaches = neo['close_approach_data']
+                close_approaches = neo["close_approach_data"]
                 for approach in close_approaches:
-                    miss_distance = approach['miss_distance']
-                    distance_kilometers = miss_distance['kilometers']
+                    miss_distance = approach["miss_distance"]
+                    distance_kilometers = miss_distance["kilometers"]
                     distances_kilometers.append(distance_kilometers)
 
         return distances_kilometers
@@ -34,12 +34,12 @@ def get_miss_distance_kilometers(neo_data):
         print(f"KeyError: {e}")
         return None
 
-'''f __name__ == "__main__":
+"""f __name__ == "__main__":
     distances = get_miss_distance_kilometers()
     if distances:
         for distance in distances:
             print(f"Miss Distance (kilometers): {distance}")
     else:
         print("No distances found.")
-        print("Failed to retrieve NEO data.")'''
+        print("Failed to retrieve NEO data.")"""
 
