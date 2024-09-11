@@ -22,3 +22,12 @@ def get_user_answer(user_data):
         "api_responses": api_responses
         }
     return users_database
+
+user_data = {
+                "01234": {
+                            "city": "Berlin",
+                            "state": "Berlin",
+                            "country": "Germany"
+                        }
+                }
+#print(get_user_answer(user_data))
