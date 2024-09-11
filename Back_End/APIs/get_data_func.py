@@ -1,5 +1,4 @@
 import requests
-
 def get_data(api_url, headers=None, params=None):
     """
     Requests data from a specific URL and returns a dict if JSON.
