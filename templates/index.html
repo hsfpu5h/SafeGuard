@@ -67,27 +67,27 @@
                     <h5>Join SafeGuard</h5>
                 </div>
                 <div class="modal-body">
-                    <form class="row g-3 needs-validation" novalidate>
+                    <form id="dataForm" class="row g-3 needs-validation" method="post" novalidate>
 
                         <div class="col-md-12">
-                            <label for="validationCustom03" class="form-label">Country</label>
-                            <input type="text" class="form-control" id="validationCustom01" required>
+                            <label for="country" class="form-label">Country</label>
+                            <input type="text" class="form-control" id="country" name="country" required>
                             <div class="invalid-feedback">
                                 Please provide a valid country.
                             </div>
                         </div>
                     
                         <div class="col-md-12">
-                            <label for="validationCustom03" class="form-label">State/Region</label>
-                            <input type="text" class="form-control" id="validationCustom02" required>
+                            <label for="state" class="form-label">State/Region</label>
+                            <input type="text" class="form-control" id="state" name="state" required>
                             <div class="invalid-feedback">
                                 Please provide a valid state or region.
                             </div>
                         </div>
                     
                         <div class="col-12">
-                            <label for="validationCustom03" class="form-label">City/Town</label>
-                            <input type="text" class="form-control" id="validationCustom03" required>
+                            <label for="city" class="form-label">City/Town</label>
+                            <input type="text" class="form-control" id="city" name="city" required>
                             <div class="invalid-feedback">
                                 Please provide a valid city or town.
                             </div>
@@ -95,7 +95,7 @@
 
                         <div class="col-12">
                             <label class="form-label" for="phone">Phone number with country code</label>
-                            <input type="text" id="phone" class="form-control" data-mdb-input-mask-init data-mdb-input-mask="+48 999-999-999" />
+                            <input type="text" id="phone" class="form-control" id="phone" name="phone" placeholder="+4912312341234" />
                         </div>
 
                         <div class="col-12">
@@ -144,4 +144,42 @@
     </footer>
     
 </body>
+
+<script>
+    document.getElementById('dataForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        // Capture form data
+        const formData = {
+            country: document.getElementById('country').value,
+            state: document.getElementById('state').value,
+            city: document.getElementById('city').value,
+            phone: document.getElementById('phone').value
+        };
+
+        fetch('/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Success:', data);
+            // Redirect to success page
+            window.location.href = '/success';  // Replace '/success' with the appropriate route to your success page
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+            alert('Failed to save form data!');
+        });
+    });
+</script>
+
 </html>
