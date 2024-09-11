@@ -1,0 +1,30 @@
+.hero-area {
+    background: rgb(174,226,238);
+    background: radial-gradient(circle, rgba(174,226,238,1) 0%, rgba(186,233,148,1) 100%);
+    text-align: center;
+    display: block;
+    padding: 15vh 0;
+    margin-bottom: 3rem;
+}
+
+h1, h2 {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+h3 {
+    margin-bottom: 3rem;
+}
+h5 {
+    margin-bottom: 0;
+}
+
+.d-flex {
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+footer {
+    margin-top: 3rem;
+    margin-bottom: 0;
+    padding: 1rem 0 0.25rem;
+}
