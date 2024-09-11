@@ -10,9 +10,11 @@ def parse_user_data(user_data):
     state = location_info.get("state")
     country = location_info.get("country")
 
+    location_query = ", ".join(filter(None, [city, state, country]))
+
     coordinates = get_coordinates(city, state, country)
 
     if not (city or state or country):
         print("No usable data available")
 
-    return city, state, country, coordinates
+    return location_query, coordinates

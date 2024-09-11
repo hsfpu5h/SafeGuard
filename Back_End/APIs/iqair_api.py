@@ -33,24 +33,34 @@ def get_stations_in_city(requested_city, requested_state, requested_country):
     return stations_in_city
 
 
-def get_air_quality_data(requested_city=None, requested_state=None, requested_country=None, latitude=None, longitude=None):
+def get_air_quality_data(location_query=None, latitude=None, longitude=None):
     """
         gets various data about air quality and weather
     """
     api_url = ""
-    if requested_city and requested_state and requested_country:
-        api_url = f"{BASE_URL}city?city={requested_city}&state={requested_state}&country={requested_country}&key={API_IQAIR_KEY}"
+    if location_query:
+        city, state, country = location_query
+
+        query_params = {
+            "city": city,
+            "state": state,
+            "country": country
+        }
+
+        query_string = "&".join(f"{key}={value}" for key, value in query_params.items() if value)
+        api_url = f"{BASE_URL}city?{query_string}&key={API_IQAIR_KEY}"
+
     elif latitude and longitude:
-        api_url = f"{BASE_URL}nearest_city?lat=latitude&lon=longitude&key={API_IQAIR_KEY}"
+        api_url = f"{BASE_URL}nearest_city?lat={latitude}&lon={longitude}&key={API_IQAIR_KEY}"
 
     air_quality_data = get_data(api_url)
     return air_quality_data
 
 
-city="New York City"
-state="New York"
-country="USA"
+#city="New York City"
+#state="New York"
+#country="USA"
 #get_stations_in_city(city, state, country)
-print(get_cities_in_state(state, country))
+#print(get_cities_in_state(state, country))
 #get_air_quality_data(city, state, country)
 #get_states_in_country(country)
