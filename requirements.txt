@@ -5,7 +5,7 @@ importlib_metadata==8.4.0
 itsdangerous==2.2.0
 Jinja2==3.1.4
 MarkupSafe==2.1.5
-Werkzeug==3.0.4
+werkzeug==3.0.4
 zipp==3.20.1
 gdacs-api==2.0.0
 Xmltodict==0.13.0
