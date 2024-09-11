@@ -1,3 +1,4 @@
+from required_apis import determine_required_apis
 from earthquake_api import get_earthquakes
 from geocoding_api import get_coordinates
 from global_disaster_api import get_disaster_data
@@ -7,7 +8,8 @@ from news_api import get_top_news
 from tagesschau_api import get_german_news
 from weather_api import get_forecast
 
-def fetch_data(required_apis, location_query=None):
+def fetch_data(location_query=None):
+    required_apis = determine_required_apis(location_query)
     results = {}
     for api in required_apis:
         if api == "weather_api":
