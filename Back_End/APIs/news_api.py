@@ -12,9 +12,7 @@ def get_top_news(location_query=None, keywords=None):
     }
 
     if location_query:
-        city = location_query.get("city")
-        state = location_query.get("state")
-        country = location_query.get("country")
+        city, state, country = location_query
 
         if country:
             params["country"] = country
@@ -25,6 +23,6 @@ def get_top_news(location_query=None, keywords=None):
     top_news = get_data(api_url, params=params)
     return top_news
 
-#print(get_top_news("ca"))
+print(get_top_news(None, "Terror"))
 
 
