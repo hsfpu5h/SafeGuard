@@ -9,11 +9,7 @@ def get_states_in_country(requested_country):
     """
     api_url = f"{BASE_URL}states?country={requested_country}&key={API_IQAIR_KEY}"
 
-    headers = {
-        "X-Api-Key": API_IQAIR_KEY
-    }
-
-    states_in_country = get_data(api_url, headers=headers)
+    states_in_country = get_data(api_url)
     return states_in_country
 
 
@@ -23,11 +19,7 @@ def get_cities_in_state(requested_state, requested_country):
     """
     api_url = f"{BASE_URL}cities?state={requested_state}&country={requested_country}&key={API_IQAIR_KEY}"
 
-    headers = {
-        "X-Api-Key": API_IQAIR_KEY
-    }
-
-    cities_available_data = get_data(api_url, headers=headers)
+    cities_available_data = get_data(api_url)
     return cities_available_data
 
 
@@ -37,11 +29,7 @@ def get_stations_in_city(requested_city, requested_state, requested_country):
     """
     api_url = f"{BASE_URL}stations?city={requested_city}&state={requested_state}&country={requested_country}&key={API_IQAIR_KEY}"
 
-    headers = {
-        "X-Api-Key": API_IQAIR_KEY
-    }
-
-    stations_in_city = get_data(api_url, headers=headers)
+    stations_in_city = get_data(api_url)
     return stations_in_city
 
 
@@ -55,11 +43,7 @@ def get_air_quality_data(requested_city=None, requested_state=None, requested_co
     elif latitude and longitude:
         api_url = f"{BASE_URL}nearest_city?lat=latitude&lon=longitude&key={API_IQAIR_KEY}"
 
-    headers = {
-        "X-Api-Key": API_IQAIR_KEY
-    }
-
-    air_quality_data = get_data(api_url, headers=headers)
+    air_quality_data = get_data(api_url)
     return air_quality_data
 
 
