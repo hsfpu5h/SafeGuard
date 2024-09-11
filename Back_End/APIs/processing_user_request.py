@@ -23,11 +23,11 @@ def get_user_answer(user_data):
         }
     return users_database
 
-user_data = {
+'''user_data = {
                 "01234": {
                             "city": "Berlin",
                             "state": "Berlin",
                             "country": "Germany"
                         }
                 }
-#print(get_user_answer(user_data))
+print(get_user_answer(user_data))'''
