@@ -1,7 +1,7 @@
 from keys import API_TOPNEWS_KEY
 from get_data_func import get_data
 
-def get_top_news(country=None, domains=None, keywords=None):
+def get_top_news(location_query=None, keywords=None):
     """
     Fetches top news for a specific region and filtered by keywords.
     """
@@ -11,11 +11,13 @@ def get_top_news(country=None, domains=None, keywords=None):
         "apiKey": API_TOPNEWS_KEY
     }
 
-    if country:
-        params["country"] = country
+    if location_query:
+        city = location_query.get("city")
+        state = location_query.get("state")
+        country = location_query.get("country")
 
-    if domains:
-        params["domains"] = domains
+        if country:
+            params["country"] = country
 
     if keywords:
         params["q"] = keywords
