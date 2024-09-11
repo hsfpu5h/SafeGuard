@@ -57,10 +57,10 @@ def get_air_quality_data(location_query=None, latitude=None, longitude=None):
     return air_quality_data
 
 
-#city="New York City"
-#state="New York"
-#country="USA"
+#city="Berlin"
+#state="Berlin"
+#country="Germany"
 #get_stations_in_city(city, state, country)
 #print(get_cities_in_state(state, country))
-#get_air_quality_data(city, state, country)
+#print(get_air_quality_data((city, state, country)))
 #get_states_in_country(country)

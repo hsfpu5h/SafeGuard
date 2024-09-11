@@ -23,6 +23,6 @@ def get_top_news(location_query=None, keywords=None):
     top_news = get_data(api_url, params=params)
     return top_news
 
-print(get_top_news(None, "Terror"))
+#print(get_top_news(None, "Terror"))
 
 
