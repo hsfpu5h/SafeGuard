@@ -13,7 +13,6 @@ def get_neo_data(start_date=None, end_date=None):
     api_url= f"https://api.nasa.gov/neo/rest/v1/feed?start_date={start_date}&end_date={end_date}&api_key={API_NEO_KEY}"
     try:
         neo_data = get_data(api_url)
-        print(neo_data)
         return neo_data
     except Exception as e:
         print(f"Error retrieving data: {e}")
@@ -36,12 +35,4 @@ def get_miss_distance_kilometers():
         print(f"KeyError: {e}")
         return None
 
-'''if __name__ == "__main__":
-    distances = get_miss_distance_kilometers()
-    if distances:
-        for distance in distances:
-            print(f"Miss Distance (kilometers): {distance}")
-    else:
-        print("No distances found.")
-        print("Failed to retrieve NEO data.")'''
 

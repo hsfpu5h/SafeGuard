@@ -55,12 +55,3 @@ def get_air_quality_data(location_query=None, latitude=None, longitude=None):
 
     air_quality_data = get_data(api_url)
     return air_quality_data
-
-
-#city="Berlin"
-#state="Berlin"
-#country="Germany"
-#get_stations_in_city(city, state, country)
-#print(get_cities_in_state(state, country))
-#print(get_air_quality_data((city, state, country)))
-#get_states_in_country(country)

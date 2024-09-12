@@ -8,5 +8,3 @@ def get_german_news():
         return news_data
     else:
         print("No data retrieved")
-
-#print(get_german_news())

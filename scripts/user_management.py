@@ -1,6 +1,5 @@
 import json
 
-
 def load_users():
     '''
     function to load user data from json file
