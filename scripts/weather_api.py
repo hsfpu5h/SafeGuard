@@ -1,4 +1,4 @@
-from keys import API_WEATHERAPI_KEY
+from SafeGuard.scripts.keys import API_WEATHERAPI_KEY
 from get_data_func import get_data
 
 def get_forecast(location_query=None, days=None):

@@ -1,4 +1,4 @@
-from keys import API_TOPNEWS_KEY
+from SafeGuard.scripts.keys import API_TOPNEWS_KEY
 from get_data_func import get_data
 
 def get_top_news(location_query=None, keywords=None):

@@ -1,5 +1,5 @@
 from datetime import datetime, timedelta
-from keys import API_NEO_KEY
+from SafeGuard.scripts.keys import API_NEO_KEY
 from get_data_func import get_data
 
 def get_neo_data(start_date=None, end_date=None):

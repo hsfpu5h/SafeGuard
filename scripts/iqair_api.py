@@ -1,4 +1,4 @@
-from keys import API_IQAIR_KEY
+from SafeGuard.scripts.keys import API_IQAIR_KEY
 from get_data_func import get_data
 
 BASE_URL = "http://api.airvisual.com/v2/"
